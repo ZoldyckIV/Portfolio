@@ -3,6 +3,13 @@
   const $ = (s) => document.querySelector(s);
 
 
+
+  /* ---------- Pause decorative loops while off screen ---------- */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('offscreen', !e.isIntersecting)), { rootMargin: '100px 0px' });
+    document.querySelectorAll('.hero, .marquee, .strip, #work, #contact').forEach((el) => io.observe(el));
+  }
+
   /* ---------- Hero typewriter ---------- */
   const typerEl = document.getElementById('typer');
   const words = ['Shopify stores', 'WordPress sites', 'Landing pages', 'React & Next.js apps', '.NET & Laravel APIs', 'Meta & TikTok campaigns'];
