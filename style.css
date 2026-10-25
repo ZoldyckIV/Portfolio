@@ -592,6 +592,19 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   .g-text { order: 3; flex-basis: 100%; }
 }
 
+
+/* Phone: messaging apps */
+.c-phone { flex-wrap: wrap; }
+.apps { flex-basis: 100%; display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px; padding-top: 10px; margin-top: 2px; border-top: 1px dashed var(--line); }
+.apps-label { font-size: .78rem; color: var(--muted); margin-right: auto; }
+.app { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 999px; font: 700 .8rem var(--f-body); text-decoration: none; color: var(--ink); border: 1px solid; }
+.app i { width: 8px; height: 8px; border-radius: 50%; animation: ping-c 1.8s infinite; }
+.app.wa { --a: #25D366; border-color: color-mix(in srgb, var(--a) 55%, transparent); background: color-mix(in srgb, var(--a) 14%, transparent); }
+.app.bo { --a: #1F9BFF; border-color: color-mix(in srgb, var(--a) 55%, transparent); background: color-mix(in srgb, var(--a) 14%, transparent); }
+.app i { background: var(--a); box-shadow: 0 0 0 0 color-mix(in srgb, var(--a) 70%, transparent); }
+a.app.wa:hover { background: color-mix(in srgb, var(--a) 26%, transparent); }
+@keyframes ping-c { 70% { box-shadow: 0 0 0 7px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
